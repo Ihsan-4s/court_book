@@ -1,3 +1,4 @@
+import 'package:court_booking/pages/package_duration.dart';
 import 'package:court_booking/widgets/button.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -74,7 +75,7 @@ class HomePage extends StatelessWidget {
                             fontSize: 12,
                           ),
                         ),
-                        SizedBox(height: 10,),
+                        SizedBox(height: 10),
 
                         Row(
                           children: [
@@ -86,7 +87,20 @@ class HomePage extends StatelessWidget {
                               ),
                             ),
                             Spacer(),
-                            CustomButton(textButton: "Select", onPressed: (){}, heightButton: 40, fontSize: 14, widthButton: 100 ,)
+                            CustomButton(
+                              textButton: "Select",
+                              onPressed: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => PackageDuration(),
+                                  ),
+                                );
+                              },
+                              heightButton: 40,
+                              fontSize: 14,
+                              widthButton: 100,
+                            ),
                           ],
                         ),
                       ],
@@ -99,7 +113,7 @@ class HomePage extends StatelessWidget {
           separatorBuilder: (context, index) {
             return SizedBox(height: 10);
           },
-          itemCount: 6,
+          itemCount: 10,
         ),
       ),
     );
